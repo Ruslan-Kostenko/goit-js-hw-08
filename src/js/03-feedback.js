@@ -22,8 +22,8 @@ formEl.addEventListener('input', throttle(() => {
 }, 500));
 
 formEl.addEventListener('submit', event => {
+    event.preventDefault();
     if(inputEl.value !== '' && textareaEl.value !== '') {
-        event.preventDefault();
         console.log('Form data:', formState);
         localStorage.removeItem('feedback-form-state');
         formState.email = '';
